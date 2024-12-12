@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashTrack</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- CSS Externo -->
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- Welcome Screen -->
+    <div class="center-screen" id="welcome-screen">
+        <div class="text-center">
+            <img src="/pictures/welcome.png" alt="Welcome" class="img-fluid" style="max-height: 150px;">
+            <h1 class="mt-4">CashTrack</h1>
+            <p class="text-muted">Track expenses, achieve goals</p>
+            <button class="btn custom-btn btn-lg mt-3" onclick="showLogin()">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div class="center-screen d-none" id="login-screen">
+        <div class="card custom-card p-4 shadow">
+            <div class="text-center mb-3"> 
+                <img src="pictures/cash-flow2.png" alt="Logo" style="height: 50px;">
+                <h3 class="mt-4">CashTrack</h3>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn custom-btn w-100 mb-2">Log In</button>
+                <div class="d-flex justify-content-between">
+                    <a href="#" class="text-muted">Reset Password</a>
+                    <a href="#" class="text-muted" onclick="showCreateAccount()">Create Account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Account Screen -->
+    <div class="center-screen d-none" id="create-account-screen">
+        <div class="card custom-card p-4 shadow">
+            <div class="text-center mb-3">
+                <img src="pictures/cash-flow2.png" alt="Logo" style="height: 50px;">
+                <h3 class="mt-4">CashTrack</h3>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <div class="mb-3">
+                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="btn custom-btn w-100 mb-2">Create Account</button>
+                <a href="#" class="text-muted d-block text-center" onclick="showLogin()">Back to Login</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showLogin() {
+            document.getElementById('welcome-screen').classList.add('d-none');
+            document.getElementById('login-screen').classList.remove('d-none');
+            document.getElementById('create-account-screen').classList.add('d-none');
+        }
+
+        function showCreateAccount() {
+            document.getElementById('welcome-screen').classList.add('d-none');
+            document.getElementById('login-screen').classList.add('d-none');
+            document.getElementById('create-account-screen').classList.remove('d-none');
+        }
+    </script>
+</body>
+</html>
